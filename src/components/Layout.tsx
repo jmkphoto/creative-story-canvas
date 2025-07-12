@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </Link>
             </div>
 
-            {/* Centered Logo */}
+            {/* Centered Logo - Clickable Home Button */}
             <Link to="/" className="text-2xl font-bold text-gradient hover:scale-105 transition-transform">
               Creative Story Media
             </Link>
@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Right Navigation */}
             <div className="flex items-center space-x-6">
               <Link to="/blog" className={`nav-link ${isActive('/blog') ? 'text-primary' : ''}`}>
-                Articles
+                Blog
               </Link>
               <Link to="/store" className={`nav-link ${isActive('/store') ? 'text-primary' : ''}`}>
                 Store
@@ -68,40 +68,85 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Footer */}
       <footer className="bg-card/50 backdrop-blur-sm border-t border-border mt-20">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Newsletter Signup */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-gradient mb-4">Subscribe for Creative Drops</h3>
+            <div className="max-w-md mx-auto flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-4 py-2 rounded-lg bg-background/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <Button>Subscribe</Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Company Info */}
             <div>
               <h3 className="font-bold text-lg mb-4 text-gradient">Creative Story Media</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-4">
                 Blending storytelling, trucking, and filmmaking into something extraordinary.
               </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <div className="space-y-2">
-                <Link to="/services" className="block text-muted-foreground hover:text-primary">Video Production</Link>
-                <Link to="/services" className="block text-muted-foreground hover:text-primary">Branding & Design</Link>
-                <Link to="/services" className="block text-muted-foreground hover:text-primary">Web/App Creation</Link>
+              <div className="flex space-x-4">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">YouTube</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">TikTok</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Facebook</a>
               </div>
             </div>
+
+            {/* Navigation */}
+            <div>
+              <h4 className="font-semibold mb-4">Navigation</h4>
+              <div className="space-y-2">
+                <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors">Services</Link>
+                <Link to="/originals" className="block text-muted-foreground hover:text-primary transition-colors">Originals</Link>
+                <Link to="/games" className="block text-muted-foreground hover:text-primary transition-colors">Games</Link>
+                <Link to="/blog" className="block text-muted-foreground hover:text-primary transition-colors">Blog</Link>
+                <Link to="/store" className="block text-muted-foreground hover:text-primary transition-colors">Store</Link>
+                <Link to="/about" className="block text-muted-foreground hover:text-primary transition-colors">About</Link>
+              </div>
+            </div>
+
+            {/* Originals */}
             <div>
               <h4 className="font-semibold mb-4">Originals</h4>
               <div className="space-y-2">
-                <Link to="/truckersinparadise" className="block text-muted-foreground hover:text-primary">Truckers in Paradise</Link>
-                <Link to="/originals" className="block text-muted-foreground hover:text-primary">Trust No One</Link>
-                <Link to="/csm-mini-docs" className="block text-muted-foreground hover:text-primary">Mini Docs</Link>
+                <Link to="/truckersinparadise" className="block text-muted-foreground hover:text-primary transition-colors">Truckers in Paradise</Link>
+                <Link to="/originals" className="block text-muted-foreground hover:text-primary transition-colors">Trust No One</Link>
+                <Link to="/csm-mini-docs" className="block text-muted-foreground hover:text-primary transition-colors">Mini Docs</Link>
+                <Link to="/behind-the-brand" className="block text-muted-foreground hover:text-primary transition-colors">Behind the Brand</Link>
               </div>
             </div>
+
+            {/* Resources & Legal */}
             <div>
               <h4 className="font-semibold mb-4">Resources</h4>
-              <div className="space-y-2">
-                <Link to="/freebies" className="block text-muted-foreground hover:text-primary">Freebies</Link>
-                <Link to="/roadmap" className="block text-muted-foreground hover:text-primary">Roadmap</Link>
-                <Link to="/press-kit" className="block text-muted-foreground hover:text-primary">Press Kit</Link>
+              <div className="space-y-2 mb-4">
+                <Link to="/freebies" className="block text-muted-foreground hover:text-primary transition-colors">Freebies</Link>
+                <Link to="/roadmap" className="block text-muted-foreground hover:text-primary transition-colors">Roadmap</Link>
+                <Link to="/press-kit" className="block text-muted-foreground hover:text-primary transition-colors">Press Kit</Link>
+                <Link to="/style-guide" className="block text-muted-foreground hover:text-primary transition-colors">Style Guide</Link>
+              </div>
+              <div className="space-y-1 text-sm">
+                <Link to="/privacy" className="block text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="block text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link>
+                <Link to="/cookies" className="block text-muted-foreground hover:text-primary transition-colors">Cookie Notice</Link>
+                <Link to="/affiliate" className="block text-muted-foreground hover:text-primary transition-colors">Affiliate Disclosure</Link>
               </div>
             </div>
           </div>
-          <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 Creative Story Media. All rights reserved.</p>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-muted-foreground">&copy; 2025 Creative Story Media. All Rights Reserved.</p>
+            <div className="flex items-center space-x-4">
+              <span className="text-muted-foreground">Contact:</span>
+              <a href="mailto:hello@creativestorymedia.com" className="text-primary hover:text-primary-glow transition-colors">
+                hello@creativestorymedia.com
+              </a>
+            </div>
           </div>
         </div>
       </footer>
